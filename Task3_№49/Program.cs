@@ -6,12 +6,12 @@ int Promt (string text){
 
 int [,] GetArray2d()
 {
-    int m = Promt("Введите значение m: ");
-    int n = Promt("Введите значение n: ");
-    int [,]  array2d = new int [m, n];
-    for (int i = 0; i < m; i++)
+    int n = Promt("Введите значение m: ");
+    int m = Promt("Введите значение n: ");
+    int [,]  array2d = new int [n, m];
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < m; j++)
         {  
             array2d [i, j] = new Random().Next(1, 10);
         }
@@ -38,7 +38,7 @@ void PrintArray2d (int [,]  array2d)
     {
         for (int j = 0; j < array2d.GetLength(1); j++)
         {
-            Console.Write (array2d[i, j] + " ");
+            Console.Write ($"{array2d[i, j]:f1}\t");
         }
         Console.WriteLine();
     }
