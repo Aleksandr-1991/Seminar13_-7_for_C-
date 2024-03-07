@@ -1,7 +1,7 @@
 ﻿// №51. Задайте 2d-массив. Най эл.., у к-ых оба индекса Нечётные, и замените эти эл.. на их квадраты.
 int Promt (string text){
     Console.WriteLine(text);
-    return int.Parse(Console.ReadLine());
+    return int.Parse(Console.ReadLine()!);
 }
 
 int [,] GetArray2d()
@@ -37,19 +37,19 @@ int SumElementsOfMainDiagonal(int [,] array2d)
     }
     return sum;
 }
-void PrintArray2d (int [,]  array2d)
+void PrintMatrix (int [,]  matrix)
 {
-    for (int i = 0; i < array2d.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < array2d.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write (array2d[i, j] + " ");
+            Console.Write ($"{matrix[i, j]:f1}\t");
         }
         Console.WriteLine();
     }
-    Console.WriteLine();
+        Console.WriteLine();
 }
 
 int [,] array2d = GetArray2d();
-PrintArray2d(array2d);
+PrintMatrix(array2d);
 Console.Write(SumElementsOfMainDiagonal(array2d));
